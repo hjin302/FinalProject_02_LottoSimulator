@@ -222,10 +222,11 @@ public class MainActivity extends BaseActivity {
 
 //        당첨 횧수들도 텍스트뷰에 반영
         binding.firstRankCountTxt.setText(String.format("1등 : %,d회", firstRankCount));
-        binding.secondRankCountTxt.setText(String.format("1등 : %,d회", secondRankCount));
-        binding.thirdRankCountTxt.setText(String.format("1등 : %,d회", thirdRankCount));
-        binding.forthRankCountTxt.setText(String.format("1등 : %,d회", forthRankCount));
-        binding.fifthRankCountTxt.setText(String.format("1등 : %,d회", fifthRankCount));
+        binding.secondRankCountTxt.setText(String.format("2등 : %,d회", secondRankCount));
+        binding.thirdRankCountTxt.setText(String.format("3등 : %,d회", thirdRankCount));
+        binding.forthRankCountTxt.setText(String.format("4등 : %,d회", forthRankCount));
+        binding.fifthRankCountTxt.setText(String.format("5등 : %,d회", fifthRankCount));
+        binding.noRankCountTxt.setText(String.format("낙첨 : %,d회", noRankCount));
 
 
 
