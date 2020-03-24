@@ -1,6 +1,5 @@
 package com.example.finalproject_02_lottosimulator;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
 import android.os.Bundle;
@@ -22,7 +21,8 @@ public class MainActivity extends BaseActivity {
 
     int[] myLottoNumArr = {12, 15, 22, 27, 40, 43};
 
-    long userMoneyAmount = 0;
+    long useMoneyAmount = 0;
+    long winMoneyAmount = 0;
 
     ActivityMainBinding binding = null;
 
@@ -146,9 +146,9 @@ public class MainActivity extends BaseActivity {
 
     void checkLottoRank(){
 //        돈을 천원 지불 + 등수 확인
-        userMoneyAmount += 1000;
+        useMoneyAmount += 1000;
 
-        binding.useMoneyTxt.setText(String.format("사용금액 : %,d원", userMoneyAmount));
+        binding.useMoneyTxt.setText(String.format("사용금액 : %,d원", useMoneyAmount));
 
 //        몇등인지?
 //        내 번호를 하나 들고 => 당첨번호 여섯개를 돌아볼것임.
@@ -168,20 +168,26 @@ public class MainActivity extends BaseActivity {
 //        correctCount의 값에 따라 등수를 판정.
         if (correctCount == 6){
 //            1등
+            winMoneyAmount += 1200000000;
 
         }else if (correctCount == 5){
 //            2등 / 3등 재검사 필요 => 보너스 번호를 맞췄는지?
 
         }else if (correctCount == 4){
-
+//            4등
+            winMoneyAmount += 50000;
 
         }else if (correctCount == 3){
-
+//            5등
+            useMoneyAmount -= 5000; // 로또 다시 구매
 
         }else{
-
+//            꽝!
 
         }
+
+//        당첨금액 텍스트에도 반영
+        binding.winMoneyTxt.setText(String.format("당첨 금액 : %,d원", winMoneyAmount));
 
 
 
